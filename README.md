@@ -1,23 +1,30 @@
-# vue-loader [![Build Status](https://circleci.com/gh/vuejs/vue-loader/tree/master.svg?style=shield)](https://circleci.com/gh/vuejs/vue-loader/tree/master) [![Windows Build status](https://ci.appveyor.com/api/projects/status/8cdonrkbg6m4k1tm/branch/master?svg=true)](https://ci.appveyor.com/project/yyx990803/vue-loader/branch/master) [![npm package](https://img.shields.io/npm/v/vue-loader.svg?maxAge=2592000)](https://www.npmjs.com/package/vue-loader)
+# Pour traduire la documentation de vue-loader
 
-> Vue.js component loader for [Webpack](https://webpack.js.org/).
+### Workflow de travail
 
-**NOTE: the master branch (9.0+) only works with Vue 2.x. For usage with Vue 1.x, see the [8.x branch](https://github.com/vuejs/vue-loader/tree/8.x).**
+Cette branche de travail `working` est volontairement mise en avant et doit uniquement être mise à jour dans le sens :
 
-It allows you to write your components in this format:
+`vuejs/vue-loader:master` --> `vuejs-fr/vue-loader:working`.
 
-![screenshot](http://blog.evanyou.me/images/vue-component.png)
+Nous traduisons les fichiers directement dans le dossier `en` sans les renommer. Cela permet lors de la mise à jour de la documentation via l'utilisation des commandes :
 
-The best way to get started is with [vue-cli](https://github.com/vuejs/vue-cli):
-
-``` js
-npm install -g vue-cli
-vue init webpack-simple hello
-cd hello
-npm install
-npm run dev
+```
+git fetch upstream
+git merge upstream/master
 ```
 
-This will setup a basic Webpack + `vue-loader` project for you, with `*.vue` files and hot-reloading working out of the box!
+d'obtenir des conflits **sur les pages déjà traduites** et ainsi maintenir la documentation à jour en fonction des modifications à travers **les documents déjà traduits**.
 
-For advanced `vue-loader` configuration, checkout the [documentation](https://vue-loader.vuejs.org).
+### Traduction
+
+Pour savoir ce qui est [en cours de traduction](https://github.com/vuejs-fr/vue-loader/issues/2) ou [comment traduire un fichier](https://github.com/vuejs-fr/vue-loader/issues/1), référez vous aux issues correspondantes.
+
+### Reverssement
+
+Quand un fichier traduit est validé par pull request, on le met à jour dans le dossier `fr` de `vuejs-fr/vue-loader:master` puis on propose une pull request au site principal :
+
+`vuejs-fr/vue-loader:master` --> `vuejs/vue-loader:master`
+
+ainsi le dossier officiel hébergeant la documentation possède bien le dossier `fr` en français et le dossier `en` en anglais.
+
+Note : il peut être intéressant de faire une pull request par ficher validé et donc de créer une branche dérivée de `vuejs-fr/vue-loader:master` pour faire la pull request (`vuejs-fr/vue-loader:master` --> `vuejs-fr/vue-loader:only_one_changed_file_from_master` --> `vuejs/vue-loader:master`)
