@@ -7,6 +7,7 @@
   - [CSS модули](features/css-modules.md)
   - [PostCSS](features/postcss.md)
   - [Горячая замена](features/hot-reload.md)
+  - [Функциональные компоненты](features/functional.md)
 - Настройка
   - [Пре-процессоры](configurations/pre-processors.md)
   - [Обработка вложенных URL](configurations/asset-url.md)
@@ -23,6 +24,7 @@
   - [preLoaders](options.md#preloaders)
   - [postLoaders](options.md#postloaders)
   - [postcss](options.md#postcss)
+  - [postcss.config](options.md#postcssconfig)
   - [cssSourceMap](options.md#csssourcemap)
   - [esModule](options.md#esmodule)
   - [preserveWhitespace](options.md#preservewhitespace)
@@ -32,3 +34,4 @@
   - [buble](options.md#buble)
   - [extractCSS](options.md#extractcss)
   - [optimizeSSR](options.md#optimizessr)
+  - [cacheBusting](options.md#cachebusting)
