@@ -50,7 +50,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
           loaders: {
             // 提取 <docs> 中的内容为原始文本
@@ -61,13 +61,15 @@ module.exports = {
     ]
   },
   plugins: [
-    // 输出 docs 到当个文件中
+    // 输出 docs 到单个文件中
     new ExtractTextPlugin('docs.md')
   ]
 }
 ```
 
 ## 运行时可用的文档
+
+> 在 11.3.0+ 中支持
 
 这里有一个向组件注入 `<docs>` 自定义块使其在运行时可用的例子。
 
@@ -95,7 +97,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
           loaders: {
             'docs': docsLoader

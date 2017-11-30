@@ -4,7 +4,7 @@
 
 You can define custom language blocks inside `*.vue` files. The content of a custom block will be processed by the loaders specified in the `loaders` object of `vue-loader` options and then required by the component module. The configuration is similar to what is described in [Advanced Loader Configuration](../configurations/advanced.md), except the matching uses the tag name instead of the `lang` attribute.
 
-If a matching loader is found for a custom block, it will be processed; otherwise the custom block will simply be ignored. Additionally, if the found loader returns a function, that function will be called with the component of the `*.vue` file as a parameter. 
+If a matching loader is found for a custom block, it will be processed; otherwise the custom block will simply be ignored. Additionally, if the found loader returns a function, that function will be called with the component of the `*.vue` file as a parameter.
 
 ## Single docs file example
 
@@ -41,7 +41,7 @@ comp-a h2 {
 #### webpack.config.js
 
 ``` js
-// Webpack 2.x
+// webpack 2.x
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
           loaders: {
             // extract all <docs> content as raw text
@@ -68,11 +68,13 @@ module.exports = {
 
 ## Runtime available docs
 
+> Requires 11.3.0+
+
 Here's an example of injecting the `<docs>` custom blocks into the component so that it's available during runtime.
 
-#### docs-loader.js 
+#### docs-loader.js
 
-In order for the custom block content to be injected, we'll need a custom loader: 
+In order for the custom block content to be injected, we'll need a custom loader:
 
 ``` js
 module.exports = function (source, map) {
@@ -94,7 +96,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
           loaders: {
             'docs': docsLoader
@@ -108,7 +110,7 @@ module.exports = {
 
 #### component.vue
 
-We are now able to access the `<docs>` block's content of imported components during runtime. 
+We are now able to access the `<docs>` block's content of imported components during runtime.
 
 ``` html
 <template>

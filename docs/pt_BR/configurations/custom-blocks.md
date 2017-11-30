@@ -41,7 +41,7 @@ comp-a h2 {
 #### webpack.config.js
 
 ```js
-// Webpack 2.x
+// webpack 2.x
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
           loaders: {
             // extrai todo conteúdo de <docs> em texto bruto
@@ -67,6 +67,8 @@ module.exports = {
 ```
 
 ## Documentos disponíveis em tempo de execução.
+
+> Requer versão 11.3.0+
 
 Aqui está um exemplo de injetar os blocos personalizados `<docs>` no componente para que ele esteja disponível durante o tempo de execução.
 
@@ -88,13 +90,13 @@ Agora, vamos configurar o webpack para usar o nosso carregador personalizado par
 
 ``` js
  const docsLoader = require.resolve('./custom-loaders/docs-loader.js')
- 
+
  module.exports = {
    module: {
      rules: [
        {
          test: /\.vue$/,
-         loader: 'vue',
+         loader: 'vue-loader',
          options: {
            loaders: {
              'docs': docsLoader
@@ -105,11 +107,11 @@ Agora, vamos configurar o webpack para usar o nosso carregador personalizado par
    }
  }
  ```
- 
+
  #### component.vue
- 
+
  Agora podemos acessar o conteúdo do bloco `<docs>` de componentes importados durante o tempo de execução.
- 
+
  ``` html
  <template>
    <div>
@@ -117,10 +119,10 @@ Agora, vamos configurar o webpack para usar o nosso carregador personalizado par
      <p>{{ docs }}</p>
    </div>
  </template>
- 
+
  <script>
  import componentB from 'componentB';
- 
+
  export default = {
    data () {
      return {
