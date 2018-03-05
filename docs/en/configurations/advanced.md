@@ -12,8 +12,6 @@ To do that, specify the `loaders` option for `vue-loader`:
 
 > Note that `preLoaders` and `postLoaders` are only supported in 10.3.0+
 
-### webpack 2.x
-
 ``` js
 module.exports = {
   // other options...
@@ -25,8 +23,8 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           // `loaders` will overwrite the default loaders.
-          // The following config will cause all <script> tags without "lang"
-          // attribute to be loaded with coffee-loader
+          // The following config will cause all `<script>` tags without `lang`
+          // attribute to be loaded with `coffee-loader`
           loaders: {
             js: 'coffee-loader'
           },
@@ -43,8 +41,8 @@ module.exports = {
           // - For `html`, the result returned by the default loader
           //   will be compiled JavaScript render function code.
           //
-          // - For `css`, the result will be returned by vue-style-loader
-          //   which isn't particularly useful in most cases. Using a postcss
+          // - For `css`, the result will be returned by `vue-style-loader`
+          //   which isn't particularly useful in most cases. Using a PostCSS
           //   plugin will be a better option.
           postLoaders: {
             html: 'babel-loader'
@@ -55,29 +53,6 @@ module.exports = {
         }
       }
     ]
-  }
-}
-```
-
-### webpack 1.x
-
-``` js
-// webpack.config.js
-module.exports = {
-  // other options...
-  module: {
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      }
-    ]
-  },
-  // `vue-loader` configurations
-  vue: {
-    loaders: {
-      // same configuration rules as above
-    }
   }
 }
 ```

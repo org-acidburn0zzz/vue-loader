@@ -12,8 +12,6 @@
 
 > Опции `preLoaders` и `postLoaders` доступны только в версиях 10.3.0+
 
-### webpack 2.x
-
 ``` js
 module.exports = {
   // другие настройки...
@@ -25,8 +23,8 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           // указанные `loaders` переопределят загрузчики используемые по умолчанию
-          // Конфигурация ниже будет обрабатывать все теги <script> без атрибута "lang"
-          // с помощью coffee-loader
+          // Конфигурация ниже будет обрабатывать все теги `<script>` без атрибута `lang`
+          // с помощью `coffee-loader`
           loaders: {
             js: 'coffee-loader'
           },
@@ -43,7 +41,7 @@ module.exports = {
           // - Для `html`, результат возвращаемый стандартным загрузчиком
           //   будет скомпилированный в JavaScript код render-функции.
           //
-          // - Для `css`, результат возвращаемый из vue-style-loader
+          // - Для `css`, результат возвращаемый из `vue-style-loader`
           //   что не является особенно полезным в большинстве случаев.
           //   Использование postcss-плагина будет лучшим вариантом.
           postLoaders: {
@@ -55,29 +53,6 @@ module.exports = {
         }
       }
     ]
-  }
-}
-```
-
-### webpack 1.x
-
-``` js
-// webpack.config.js
-module.exports = {
-  // другие настройки...
-  module: {
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      }
-    ]
-  },
-  // настройки vue-loader
-  vue: {
-    loaders: {
-      // такая же конфигурация правил как и выше
-    }
   }
 }
 ```
