@@ -46,7 +46,7 @@
     "hash-sum": "^1.0.2",
     "loader-utils": "^1.1.0",
     "lru-cache": "^4.1.1",
-    "postcss": "^6.0.8",
+    "postcss": "^6.0.23",
     "postcss-load-config": "^1.1.0",
     "postcss-selector-parser": "^2.0.0",
     "prettier": "^1.7.0",
