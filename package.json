@@ -44,7 +44,7 @@
   "dependencies": {
     "consolidate": "^0.14.0",
     "hash-sum": "^1.0.2",
-    "loader-utils": "^1.1.0",
+    "loader-utils": "^1.4.0",
     "lru-cache": "^4.1.1",
     "postcss": "^6.0.8",
     "postcss-load-config": "^1.1.0",
